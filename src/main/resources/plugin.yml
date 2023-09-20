@@ -1,0 +1,4 @@
+name: TrashPlugin
+version: '${project.version}'
+main: fr.arthurbr02.trashplugin.Main
+api-version: '1.20'
