@@ -34,7 +34,8 @@ public class TrashCommand implements CommandExecutor {
         }
         Player player = (Player) sender;
 
-        if (!config.contains(player.getUniqueId().toString())) {
+        if (config.getConfigurationSection(player.getUniqueId().toString()) == null) {
+            config.createSection(player.getUniqueId().toString());
             config.getConfigurationSection(player.getUniqueId().toString()).set(".mode", config.getInt("defaultMode"));
             main.saveConfig();
         }

@@ -60,6 +60,9 @@ public class TrashListener implements Listener {
 
                 }
             }
+            if (main.getConfig().getConfigurationSection(event.getPlayer().getUniqueId().toString()) == null) {
+                main.getConfig().createSection(event.getPlayer().getUniqueId().toString());
+            }
             main.getConfig().getConfigurationSection(event.getPlayer().getUniqueId().toString()).set(".filter", items);
             main.saveConfig();
             return;
